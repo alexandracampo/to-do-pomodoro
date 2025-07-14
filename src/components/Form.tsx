@@ -16,7 +16,10 @@ function Form() {
   const handleAddTask = (e: onSubmit): void => {
     e.preventDefault();
     if (inputTaskValue.trim() === "") return; // No añadir tareas vacías
-    setTasksList([...tasksList, inputTaskValue]);
+    setTasksList([
+      ...tasksList,
+      { id: crypto.randomUUID(), text: inputTaskValue, completed: false },
+    ]);
     setInputTaskValue("");
   };
   return (
@@ -29,7 +32,11 @@ function Form() {
           onChange={handleWriteTask}
           value={inputTaskValue}
         />
-        <button className="todo-submit" type="submit">
+        <button
+          className="todo-submit"
+          type="submit"
+          disabled={!inputTaskValue.trim()}
+        >
           Añadir
         </button>
       </form>

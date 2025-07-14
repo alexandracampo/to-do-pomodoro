@@ -1,9 +1,15 @@
 import { createContext, useContext, useState } from "react";
 import type { ReactNode } from "react";
 
+type Task = {
+  id: string;
+  text: string;
+  completed: boolean;
+};
+
 type AppContextType = {
-  tasksList: string[];
-  setTasksList: React.Dispatch<React.SetStateAction<string[]>>;
+  tasksList: Task[];
+  setTasksList: React.Dispatch<React.SetStateAction<Task[]>>;
   //   inputTaskValue: string;
   //   setInputTaskValue: React.Dispatch<React.SetStateAction<string>>;
   //   isModalOpen: boolean;
@@ -13,7 +19,7 @@ type AppContextType = {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const [tasksList, setTasksList] = useState<string[]>([]);
+  const [tasksList, setTasksList] = useState<Task[]>([]);
 
   return (
     <AppContext.Provider value={{ tasksList, setTasksList }}>

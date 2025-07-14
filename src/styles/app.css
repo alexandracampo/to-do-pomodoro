@@ -43,7 +43,13 @@ body {
     transition: background 0.2s;
 }
 
-.todo-submit:hover {
+.todo-submit:disabled {
+    background-color: #ccc;
+    cursor: auto;
+    opacity: 0.6;
+}
+
+.todo-submit:hover:enabled {
     background: #1565c0;
 }
 
