@@ -1,0 +1,40 @@
+import { useState } from "react";
+import { useApp } from "../context/AppContext";
+
+function Form() {
+  const { tasksList, setTasksList } = useApp();
+
+  const [inputTaskValue, setInputTaskValue] = useState<string>("");
+
+  type InputChange = React.ChangeEvent<HTMLInputElement>;
+  type onSubmit = React.FormEvent<HTMLFormElement>;
+
+  const handleWriteTask = (e: InputChange): void => {
+    setInputTaskValue(e.target.value);
+  };
+
+  const handleAddTask = (e: onSubmit): void => {
+    e.preventDefault();
+    if (inputTaskValue.trim() === "") return; // No añadir tareas vacías
+    setTasksList([...tasksList, inputTaskValue]);
+    setInputTaskValue("");
+  };
+  return (
+    <>
+      <form className="todo-form" onSubmit={handleAddTask}>
+        <input
+          className="todo-input"
+          type="text"
+          placeholder="Añade una tarea"
+          onChange={handleWriteTask}
+          value={inputTaskValue}
+        />
+        <button className="todo-submit" type="submit">
+          Añadir
+        </button>
+      </form>
+    </>
+  );
+}
+
+export default Form;
