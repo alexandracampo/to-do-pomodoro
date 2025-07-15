@@ -19,7 +19,10 @@ type AppContextType = {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const [tasksList, setTasksList] = useState<Task[]>([]);
+  const [tasksList, setTasksList] = useState<Task[]>(() => {
+    const storedTasks = localStorage.getItem("tasks");
+    return storedTasks ? JSON.parse(storedTasks) : [];
+  });
 
   return (
     <AppContext.Provider value={{ tasksList, setTasksList }}>
