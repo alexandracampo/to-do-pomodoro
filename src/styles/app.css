@@ -65,6 +65,7 @@ body {
     margin-bottom: 10px;
     padding: 8px 0;
     border-bottom: 1px solid #eee;
+    justify-content: space-between;
 }
 
 .todo-checkbox {
@@ -74,19 +75,60 @@ body {
 .todo-task {
     flex: 1;
     font-size: 1rem;
+    width: 70%;
+}
+
+.todo-task.completed {
+    text-decoration: line-through;
+    color: grey;
+    opacity: 0.8;
+}
+
+.input-edit {
+    width: 70%;
+    height: 1.5rem;
+    padding-left: 5px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.input-edit:focus {
+    border-color: #13b152;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(25, 210, 40, 0.2);
 }
 
 .todo-delete {
-    background: #e53835df;
-    color: #fff;
+    width: 32px;
+    height: 32px;
+    padding: 0;
     border: none;
-    padding: 5px 11px;
-    border-radius: 6px;
+    background: none;
     cursor: pointer;
-    font-size: 0.95rem;
-    transition: background 0.2s;
 }
 
-.todo-delete:hover {
-    background: #b71c1c;
+.img-icon-delete {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+.edit-check-button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.edit-check-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
 }

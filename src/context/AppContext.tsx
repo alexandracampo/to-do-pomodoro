@@ -10,6 +10,8 @@ type Task = {
 type AppContextType = {
   tasksList: Task[];
   setTasksList: React.Dispatch<React.SetStateAction<Task[]>>;
+  editableTaskId: string;
+  setEditableTaskId: React.Dispatch<React.SetStateAction<string>>;
   //   inputTaskValue: string;
   //   setInputTaskValue: React.Dispatch<React.SetStateAction<string>>;
   //   isModalOpen: boolean;
@@ -23,9 +25,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     const storedTasks = localStorage.getItem("tasks");
     return storedTasks ? JSON.parse(storedTasks) : [];
   });
+  const [editableTaskId, setEditableTaskId] = useState<string>("");
 
   return (
-    <AppContext.Provider value={{ tasksList, setTasksList }}>
+    <AppContext.Provider
+      value={{ tasksList, setTasksList, editableTaskId, setEditableTaskId }}
+    >
       {children}
     </AppContext.Provider>
   );
