@@ -31,6 +31,7 @@ function Form() {
           placeholder="Añade una tarea"
           onChange={handleWriteTask}
           value={inputTaskValue}
+          maxLength={50}
         />
         <button
           className="todo-submit"

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useApp } from "../context/AppContext";
 import iconCheck from "../assets/icons/icon-check.png";
 import iconEdit from "../assets/icons/icon-edit.png";
@@ -11,29 +10,20 @@ type Task = {
 
 type EditButtonProps = {
   currentTask: Task;
+  onConfirmEdit: () => void;
 };
 
-function EditButton({ currentTask }: EditButtonProps) {
+function EditButton({ currentTask, onConfirmEdit }: EditButtonProps) {
   const { setEditableTaskId, editableTaskId } = useApp();
   const isEditing = editableTaskId === currentTask.id;
 
   const handleButtonClick = () => {
     if (isEditing) {
-      setEditableTaskId(""); // Confirmar edición, salir del modo edición
-      // Aquí podrías añadir lógica para guardar el texto editado
+      onConfirmEdit();
     } else {
       setEditableTaskId(currentTask.id); // Entrar en modo edición
     }
-    console.log("Editar tarea:", currentTask);
-    console.log(editableTaskId);
   };
-
-  //   const handleConfirmClick = () => {
-  //     setEditableTaskId(""); // salir del modo edición global
-  //     setIsEditing(false); // salir del modo edición local
-  //     console.log("Tarea confirmada:", currentTask);
-  //     // Aquí podrías guardar los cambios si los editaste en otro componente
-  //   };
 
   return (
     <>
