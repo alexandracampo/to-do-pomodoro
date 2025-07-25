@@ -2,6 +2,7 @@ import { useApp } from "../context/AppContext";
 import EditButton from "./EditButton";
 import iconDelete from "../assets/icons/icon-delete.png";
 import { useEffect, useState } from "react";
+import "../styles/todoItem.css";
 
 function TodoItem() {
   type InputChange = React.ChangeEvent<HTMLInputElement>;
@@ -55,6 +56,7 @@ function TodoItem() {
               <>
                 <input
                   className="todo-checkbox"
+                  name="checkbox"
                   type="checkbox"
                   checked={task.completed}
                   onChange={() => toggleCompleted(task.id)}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useApp } from "../context/AppContext";
+import "../styles/form.css";
 
 function Form() {
   const { tasksList, setTasksList } = useApp();
@@ -27,6 +28,7 @@ function Form() {
       <form className="todo-form" onSubmit={handleAddTask}>
         <input
           className="todo-input"
+          name="tarea"
           type="text"
           placeholder="Añade una tarea"
           onChange={handleWriteTask}
