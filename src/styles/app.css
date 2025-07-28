@@ -14,7 +14,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 10px #FF5841;
     padding: 32px 24px;
-    min-height: 79vh;
+    min-height: 70vh;
 }
 
 .todo-title {
