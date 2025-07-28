@@ -1,11 +1,32 @@
-/* Colores utilizados: blanco (#FFFFFF), naranja ocaso (#FF5841), rojo-violeta (#C53678) */
+/* Paleta de colores utilizados: blanco (#FFFFFF), naranja ocaso (#FF5841), rojo-violeta (#C53678) */
 
 body {
     font-family: 'Manrope', sans-serif;
     background-color: #fff;
     background-image: radial-gradient(#ffe2e9 1px, transparent 1px);
     background-size: 20px 20px;
+
+    /* otro estilo de fondo: */
+    /* background: linear-gradient(-45deg, #ffffff, #fff3f6, #ffecec, #fffafc);
+    background-size: 400% 400%;
+    animation: waveBackground 15s ease infinite;
+    font-family: 'Manrope', sans-serif;
+    min-height: 100vh;
+    margin: 0; */
 }
+
+
+/* @keyframes waveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} */
 
 .todo-container {
     max-width: 400px;

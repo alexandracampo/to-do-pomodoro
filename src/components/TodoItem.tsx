@@ -1,8 +1,9 @@
 import { useApp } from "../context/AppContext";
 import EditButton from "./EditButton";
 import iconDelete from "../assets/icons/icon-delete.png";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "../styles/todoItem.css";
+import { launchConfetti } from "./confetti";
 
 function TodoItem() {
   type InputChange = React.ChangeEvent<HTMLInputElement>;
@@ -38,6 +39,18 @@ function TodoItem() {
     setEditableTaskId("");
     setValueEdit("");
   };
+
+  const wasAllCompletedRef = useRef(false);
+  useEffect(() => {
+    const allCompleted =
+      tasksList.length > 0 && tasksList.every((task) => task.completed);
+
+    if (allCompleted && !wasAllCompletedRef.current) {
+      launchConfetti();
+    }
+
+    wasAllCompletedRef.current = allCompleted;
+  }, [tasksList]);
 
   return (
     <div>

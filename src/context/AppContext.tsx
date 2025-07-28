@@ -12,10 +12,6 @@ type AppContextType = {
   setTasksList: React.Dispatch<React.SetStateAction<Task[]>>;
   editableTaskId: string;
   setEditableTaskId: React.Dispatch<React.SetStateAction<string>>;
-  //   inputTaskValue: string;
-  //   setInputTaskValue: React.Dispatch<React.SetStateAction<string>>;
-  //   isModalOpen: boolean;
-  //   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
