@@ -16,11 +16,12 @@
 }
 
 .todo-checkbox:checked {
-    accent-color: #49de2ffe;
+    accent-color: #C53678;
 
 }
 
 .todo-task {
+    width: 90%;
     flex: 1;
     font-size: 1rem;
     width: 70%;
@@ -36,7 +37,7 @@
 }
 
 .input-edit {
-    width: 70%;
+    width: 90%;
     height: 1.5rem;
     padding-left: 8px;
     color: #333333;

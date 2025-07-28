@@ -13,7 +13,11 @@ function App() {
 
   return (
     <div className="todo-container">
-      <h1 className="todo-title">Lista de tareas</h1>
+      <h1 className="todo-title bounce">
+        {"Lista de tareas".split("").map((letter, i) => (
+          <span key={i}>{letter === " " ? "\u00A0" : letter}</span>
+        ))}
+      </h1>
       <Form />
       <TodoItem />
     </div>

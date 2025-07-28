@@ -60,6 +60,10 @@ function TodoItem() {
                   type="checkbox"
                   checked={task.completed}
                   onChange={() => toggleCompleted(task.id)}
+                  style={{
+                    visibility:
+                      editableTaskId === task.id ? "hidden" : "visible",
+                  }}
                 />
                 <span
                   className={`todo-task ${task.completed ? "completed" : ""}`}
