@@ -16,7 +16,6 @@ function App() {
   }, [tasksList]);
 
   const handleToggle = () => {
-    // setToggleCard(!toggleCard);
     setIsAnimating(true);
     setTimeout(() => {
       setToggleCard((prev) => !prev);
