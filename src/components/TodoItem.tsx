@@ -1,15 +1,22 @@
 import { useApp } from "../context/AppContext";
 import EditButton from "./EditButton";
 import iconDelete from "../assets/icons/icon-delete.png";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import "../styles/todoItem.css";
-import { launchConfetti } from "./confetti";
+import { launchConfetti } from "../utils/confetti";
 
 function TodoItem() {
   type InputChange = React.ChangeEvent<HTMLInputElement>;
 
-  const { tasksList, setTasksList, editableTaskId, setEditableTaskId } =
-    useApp();
+  const {
+    tasksList,
+    setTasksList,
+    editableTaskId,
+    setEditableTaskId,
+    hasShownConfetti,
+    setHasShownConfetti,
+  } = useApp();
+
   const [valueEdit, setValueEdit] = useState<string>("");
 
   const toggleCompleted = (id: string) => {
@@ -40,16 +47,18 @@ function TodoItem() {
     setValueEdit("");
   };
 
-  const wasAllCompletedRef = useRef(false);
   useEffect(() => {
     const allCompleted =
       tasksList.length > 0 && tasksList.every((task) => task.completed);
 
-    if (allCompleted && !wasAllCompletedRef.current) {
+    if (allCompleted && !hasShownConfetti) {
       launchConfetti();
+      setHasShownConfetti(true);
     }
 
-    wasAllCompletedRef.current = allCompleted;
+    if (!allCompleted && hasShownConfetti) {
+      setHasShownConfetti(false);
+    }
   }, [tasksList]);
 
   return (

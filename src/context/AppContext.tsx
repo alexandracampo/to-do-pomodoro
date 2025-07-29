@@ -12,6 +12,10 @@ type AppContextType = {
   setTasksList: React.Dispatch<React.SetStateAction<Task[]>>;
   editableTaskId: string;
   setEditableTaskId: React.Dispatch<React.SetStateAction<string>>;
+  toggleCard: boolean;
+  setToggleCard: React.Dispatch<React.SetStateAction<boolean>>;
+  hasShownConfetti: boolean;
+  setHasShownConfetti: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -22,10 +26,21 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     return storedTasks ? JSON.parse(storedTasks) : [];
   });
   const [editableTaskId, setEditableTaskId] = useState<string>("");
+  const [hasShownConfetti, setHasShownConfetti] = useState(false);
+  const [toggleCard, setToggleCard] = useState<boolean>(true); // true será <lista de tareas> y false será <pomodoro>
 
   return (
     <AppContext.Provider
-      value={{ tasksList, setTasksList, editableTaskId, setEditableTaskId }}
+      value={{
+        tasksList,
+        setTasksList,
+        editableTaskId,
+        setEditableTaskId,
+        toggleCard,
+        setToggleCard,
+        hasShownConfetti,
+        setHasShownConfetti,
+      }}
     >
       {children}
     </AppContext.Provider>

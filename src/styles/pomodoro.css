@@ -1,0 +1,65 @@
+/* pomodoroCard.css */
+
+.pomodoro-card {
+    color: #FF5841;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+/* .pomodoro-card.work {
+    border: 3px solid #C53678;
+} */
+
+.pomodoro-card.break {
+    border: 1px solid #FF5841;
+}
+
+.pomodoro-mode {
+    font-size: 1.5rem;
+    color: #C53678;
+    margin-bottom: 1rem;
+}
+
+.pomodoro-timer {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.pomodoro-buttons button {
+    margin: 0.3rem;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 999px;
+    background-color: #C53678;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 30%;
+}
+
+.pomodoro-buttons button:hover {
+    background-color: #d44786;
+    transform: scale(1.1);
+}
+
+.pomodoro-cycle {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
