@@ -9,7 +9,7 @@ function App() {
   const { tasksList, toggleCard, setToggleCard } = useApp();
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const tittle = toggleCard ? "Lista de tareas" : "Pomodoro";
-  const iconButton = toggleCard ? "📋" : "🍅";
+  const iconButton = toggleCard ? "🍅" : "📋";
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasksList));
