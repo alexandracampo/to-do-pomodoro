@@ -36,7 +36,7 @@
     margin: 0.3rem;
     padding: 0.6rem 1.2rem;
     border: none;
-    border-radius: 999px;
+    border-radius: 6px;
     background-color: #C53678;
     color: white;
     font-weight: bold;
@@ -46,24 +46,9 @@
 
 }
 
-@media (max-width: 450px) {
-
-    /* Desactiva el hover en móviles (opcional pero recomendable) */
-    .pomodoro-buttons button:hover {
-        background-color: initial;
-        transform: none;
-    }
-
-    /* Usa :active para tacto */
-    .pomodoro-buttons button:active {
-        background-color: #d44786;
-        transform: scale(1.1);
-    }
-}
-
 .pomodoro-buttons button:hover {
     background-color: #d44786;
-    transform: scale(1.1);
+    transform: scale(0.95);
 }
 
 .pomodoro-cycle {
