@@ -45,7 +45,7 @@ function PomodoroCard() {
       </h2>
       <div className="pomodoro-timer">{formatTime(timeLeft)}</div>
       <div className="pomodoro-buttons">
-        <button onClick={() => setIsRunning(true)}>Iniciar</button>
+        <button onClick={() => setIsRunning(true)}>Iniciar - Reanudar</button>
         <button onClick={() => setIsRunning(false)}>Pausar</button>
         <button
           onClick={() => {

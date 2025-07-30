@@ -25,6 +25,13 @@
     margin-bottom: 1.5rem;
 }
 
+.pomodoro-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .pomodoro-buttons button {
     margin: 0.3rem;
     padding: 0.6rem 1.2rem;
@@ -35,21 +42,19 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 30%;
+    width: 40%;
+
 }
 
 @media (max-width: 450px) {
-    .pomodoro-buttons {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+
+    /* Desactiva el hover en móviles (opcional pero recomendable) */
+    .pomodoro-buttons button:hover {
+        background-color: initial;
+        transform: none;
     }
 
-    .pomodoro-buttons button {
-        width: 60%;
-    }
-
+    /* Usa :active para tacto */
     .pomodoro-buttons button:active {
         background-color: #d44786;
         transform: scale(1.1);
