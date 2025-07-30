@@ -49,6 +49,11 @@
     .pomodoro-buttons button {
         width: 60%;
     }
+
+    .pomodoro-buttons button:active {
+        background-color: #d44786;
+        transform: scale(1.1);
+    }
 }
 
 .pomodoro-buttons button:hover {
