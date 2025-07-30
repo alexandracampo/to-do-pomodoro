@@ -89,6 +89,26 @@ body {
     }
 }
 
+.empty-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.animation {
+    width: 40%;
+}
+
+.empty-text {
+    color: #4c4b4c;
+    margin-top: 0;
+    padding-top: 0;
+    font-size: smaller;
+}
+
+
 .todo-list {
     list-style: none;
     padding: 0;

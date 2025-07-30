@@ -4,12 +4,15 @@ import TodoItem from "./components/TodoItem";
 import { useApp } from "./context/AppContext";
 import { useEffect, useState } from "react";
 import PomodoroCard from "./components/PomodoroCard";
+import Lottie from "lottie-react";
+import emptyAnimation from "./assets/Empty red.json";
 
 function App() {
   const { tasksList, toggleCard, setToggleCard } = useApp();
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const tittle = toggleCard ? "Lista de tareas" : "Pomodoro";
   const iconButton = toggleCard ? "🍅" : "📋";
+  const emptyList = tasksList.length === 0;
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasksList));
@@ -40,7 +43,18 @@ function App() {
       {toggleCard ? (
         <section>
           <Form />
-          <TodoItem />
+          {emptyList ? (
+            <div className="empty-container">
+              <Lottie
+                animationData={emptyAnimation}
+                loop={true}
+                className="animation"
+              />
+              <p className="empty-text">Añade una nueva tarea</p>
+            </div>
+          ) : (
+            <TodoItem />
+          )}
         </section>
       ) : (
         <section>
