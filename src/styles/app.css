@@ -46,6 +46,7 @@ body {
 
 .toggle-button:hover {
     box-shadow: 0 4px 10px #FF5841;
+    transform: scale(1.1);
 }
 
 .todo-title {
@@ -57,16 +58,12 @@ body {
 
 .todo-title.bounce span {
     display: inline-block;
-    animation: bounce 1.2s infinite ease-in-out;
+    animation: bounce 1.2s ease-in-out;
+    animation-iteration-count: infinite;
     background: linear-gradient(90deg, #dd1573, #C53678);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-}
-
-.bounce span {
-    display: inline-block;
-    animation: bounce 1.2s infinite ease-in-out;
 }
 
 .bounce span:nth-child(odd) {
