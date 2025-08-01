@@ -10,13 +10,19 @@
 } */
 
 .pomodoro-card.break {
-    border: 1px solid #FF5841;
+    border: 2px solid rgb(42, 151, 171);
+    color: rgb(42, 151, 171);
 }
 
-.pomodoro-mode {
+.pomodoro-mode.work {
     font-size: 1.5rem;
     color: #C53678;
     margin-bottom: 1rem;
+}
+
+.pomodoro-mode.break {
+    font-size: 1.5rem;
+    color: rgb(42, 151, 171);
 }
 
 .pomodoro-timer {
@@ -43,7 +49,10 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 40%;
+}
 
+.pomodoro-buttons.break button {
+    background-color: rgb(42, 151, 171);
 }
 
 .pomodoro-buttons button:hover {

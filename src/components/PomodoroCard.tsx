@@ -37,14 +37,14 @@ function PomodoroCard() {
     const s = String(seconds % 60).padStart(2, "0");
     return `${m}:${s}`;
   };
-
+  console.log(mode);
   return (
     <div className={`pomodoro-card ${mode}`}>
-      <h2 className="pomodoro-mode">
+      <h2 className={`pomodoro-mode ${mode}`}>
         {mode === "work" ? "¡A trabajar!" : "Hora de descansar"}
       </h2>
       <div className="pomodoro-timer">{formatTime(timeLeft)}</div>
-      <div className="pomodoro-buttons">
+      <div className={`pomodoro-buttons ${mode}`}>
         <button onClick={() => setIsRunning(true)}>Iniciar - Reanudar</button>
         <button onClick={() => setIsRunning(false)}>Pausar</button>
         <button
