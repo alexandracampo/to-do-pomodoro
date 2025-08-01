@@ -1,43 +1,16 @@
+import { useApp } from "../context/AppContext";
 import "../styles/pomodoro.css";
-import { useEffect, useState } from "react";
+// import { useEffect } from "react";
 
 function PomodoroCard() {
-  const [timeLeft, setTimeLeft] = useState(25 * 60);
-  const [isRunning, setIsRunning] = useState(false);
-  const [mode, setMode] = useState<"work" | "break">("work");
-  const [cycle, setCycle] = useState(0);
-
-  useEffect(() => {
-    let interval: number;
-    if (isRunning && timeLeft > 0) {
-      interval = window.setInterval(() => {
-        setTimeLeft((prev) => prev - 1);
-      }, 1000);
-    } else if (timeLeft === 0) {
-      handleSwitch();
-    }
-    return () => clearInterval(interval);
-  }, [isRunning, timeLeft]);
-
-  const handleSwitch = () => {
-    if (mode === "work") {
-      const newCycle = cycle + 1;
-      setCycle(newCycle);
-      setMode("break");
-      setTimeLeft(newCycle % 4 === 0 ? 15 * 60 : 5 * 60);
-    } else {
-      setMode("work");
-      setTimeLeft(25 * 60);
-    }
-    setIsRunning(false);
-  };
+  const { timeLeft, setTimeLeft, setIsRunning, mode, cycle } = useApp();
 
   const formatTime = (seconds: number) => {
     const m = String(Math.floor(seconds / 60)).padStart(2, "0");
     const s = String(seconds % 60).padStart(2, "0");
     return `${m}:${s}`;
   };
-  console.log(mode);
+
   return (
     <div className={`pomodoro-card ${mode}`}>
       <h2 className={`pomodoro-mode ${mode}`}>
