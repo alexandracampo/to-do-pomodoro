@@ -3,7 +3,8 @@ import "../styles/pomodoro.css";
 // import { useEffect } from "react";
 
 function PomodoroCard() {
-  const { timeLeft, setTimeLeft, setIsRunning, mode, cycle } = useApp();
+  const { timeLeft, setTimeLeft, setIsRunning, mode, cycle, isRunning } =
+    useApp();
 
   const formatTime = (seconds: number) => {
     const m = String(Math.floor(seconds / 60)).padStart(2, "0");
@@ -18,7 +19,9 @@ function PomodoroCard() {
       </h2>
       <div className="pomodoro-timer">{formatTime(timeLeft)}</div>
       <div className={`pomodoro-buttons ${mode}`}>
-        <button onClick={() => setIsRunning(true)}>Iniciar - Reanudar</button>
+        <button disabled={isRunning} onClick={() => setIsRunning(true)}>
+          Iniciar - Reanudar
+        </button>
         <button onClick={() => setIsRunning(false)}>Pausar</button>
         <button
           onClick={() => {

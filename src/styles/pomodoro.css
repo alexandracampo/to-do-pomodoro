@@ -60,6 +60,13 @@
     transform: scale(0.95);
 }
 
+.pomodoro-buttons button:disabled {
+    background-color: grey;
+    cursor: auto;
+    opacity: 0.6;
+    transform: none;
+}
+
 .pomodoro-cycle {
     margin-top: 1rem;
     font-size: 0.9rem;
