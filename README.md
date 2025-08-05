@@ -31,7 +31,7 @@ src/
 ├── assets/ # Iconos e imágenes
 ├── components/ # Componentes de React
 ├── context/ # AppContext con useContext
-├── styles/ # (opcional si separas el CSS)
+├── styles/ # Ficheros css de cada componente
 ├── App.tsx # Componente principal
 ├── main.tsx # Punto de entrada
 └── index.html # HTML base
