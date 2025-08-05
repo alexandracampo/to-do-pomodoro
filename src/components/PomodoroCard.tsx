@@ -22,7 +22,9 @@ function PomodoroCard() {
         <button disabled={isRunning} onClick={() => setIsRunning(true)}>
           Iniciar - Reanudar
         </button>
-        <button onClick={() => setIsRunning(false)}>Pausar</button>
+        <button disabled={!isRunning} onClick={() => setIsRunning(false)}>
+          Pausar
+        </button>
         <button
           onClick={() => {
             setIsRunning(false);
