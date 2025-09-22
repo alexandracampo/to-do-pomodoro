@@ -12,7 +12,7 @@ Aplicación web minimalista y moderna para gestionar tus tareas diarias, desarro
 
 ## 🚀 Demo
 
-🔗 [Ver la aplicación en GitHub Pages](https://alexandracampo.github.io/to-do-list/)
+🔗 [Ver la aplicación en GitHub Pages](https://alexandracampo.github.io/to-do-pomodoro/)
 
 ## 🧑‍💻 Tecnologías usadas
 
