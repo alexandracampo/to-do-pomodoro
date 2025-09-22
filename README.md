@@ -1,4 +1,4 @@
-# 📝 To-Do List App
+# 📝 To-Do List & Pomodoro
 
 Aplicación web minimalista y moderna para gestionar tus tareas diarias, desarrollada con **React + Vite + TypeScript** y desplegada en **GitHub Pages**.
 
@@ -6,9 +6,8 @@ Aplicación web minimalista y moderna para gestionar tus tareas diarias, desarro
 
 - Añadir, editar, completar y eliminar tareas
 - Interfaz responsive y accesible
-- Animaciones suaves y diseño elegante con la fuente **Manrope**
-- Iconos personalizados
 - Guardado en memoria local del navegador
+- Sección "pomodoro" para gestionar tu tiempo
 - Despliegue en GitHub Pages
 
 ## 🚀 Demo
@@ -24,14 +23,3 @@ Aplicación web minimalista y moderna para gestionar tus tareas diarias, desarro
 - 🖋️ [Manrope](https://fonts.google.com/specimen/Manrope)
 - 🧠 Context API de React para gestión de estado
 - 📦 GitHub Pages para el despliegue
-
-## 📂 Estructura del proyecto
-
-src/
-├── assets/ # Iconos e imágenes
-├── components/ # Componentes de React
-├── context/ # AppContext con useContext
-├── styles/ # Ficheros css de cada componente
-├── App.tsx # Componente principal
-├── main.tsx # Punto de entrada
-└── index.html # HTML base
